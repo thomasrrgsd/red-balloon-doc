@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <header>
+    <title>Pop A Red Balloon!</title>
+    <section id="header">
+    <div class="container-fluid px-0">
+		<div class="row no-gutters">
+			<div class="col-sm-auto bg-white">
+				<a href="https://github.com/thomasrrgsd/pop-a-red-balloon.git" class="logo navbar-brand">
+					<img src="images/sad_red_balloon.jpeg" alt="tilogo" width="150" height="150">
+				</a>
+			</div>
+			<div class="col-sm bg-white d-flex justify-content-center">
+				<myFont>Team A12/3: Pop A Red Balloon<br>RED BALLOONS BEWARE</myFont>
+			</div>
+			<div class="col-sm-auto bg-white">
+				<a href="https://github.com/thomasrrgsd/pop-a-red-balloon.git" class="logo navbar-brand">
+					<img src="images/sad_red_balloon.jpeg" alt="tilogo" width="150" height="150">
+				</a>
+			</div>			
+		</div>
+	</div>
+        <nav class="navbar navbar-expand-lg navbar-light main-nav border border-dark">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item nav">
+                        <a class="px-2" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item nav">
+                        <a class="px-2" href="problemDescription.html">Problem Description</a>
+                    </li>
+                    <li class="nav-item nav">
+                        <a class="px-2" href="practicalProblems.html">Challenges & Advice</a>
+                    </li>
+                    <li class="nav-item nav">
+                        <a class="px-2" href="hardware.html">Hardware</a>
+                    </li>
+                    <li class="nav-item nav">
+                        <a class="active px-2" href="software.html">Software</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+  </header>
+  <body>
+    <div class="container">
+		<div class="row pt-3 pb-3 bg-white">
+		    <p>  </p>
+		</div>
+		<div class="row bg-white pl-2 pb-4">
+			<ul>
+				<li>Python scripts:</li>
+				<ul>
+					<li>Coded by the team.</li>
+					<li>Github Repository: <a href="https://github.com/thomasrrgsd/pop-a-red-balloon.git">GitHub Repo</a></li>
+					<li>The final commit is not the code used for the demonstration. Check code comments for demonstration commit.</li>
+					<li>See code comments for operation of code.</li>
+				</ul>
+				<li>Main TX2 Operating System:</li>
+				<ul>
+				<li>Used in successful final demonstration.</li>
+				<li>Serial Number: 0324817094928</li>
+				<li>Ubuntu 16.04.6 LTS</li>
+				<li>Likely installed using JetPack.</li>
+				<li>Works with the Orbitty Carrier Board and Developer Board.</li>
+				</ul>
+				<li>Backup TX2 Operating System:</li>
+				<ul>
+				<li>Back up TX2 with a newer OS in case of failure of main TX2. Nobody else needed it.</li>
+				<li>Serial Number: 0324817094411</li>
+				<li>Ubuntu 18.04</li>
+				<li>Installed using a custom VMWare image by Brandon from the Spring 2022 Visual Tracker team.</li>
+				<li>Only works on the Orbitty Carrier Board.</li>
+				</ul>
+				<li>Ground Control Station - QGroundControl:</li>
+				<ul>
+				<li>Version: 4.2.0</li>
+				<li>Installation: <a href="https://docs.qgroundcontrol.com/master/en/getting_started/download_and_install.html">QGroundControl on Windows</a></li>
+				</ul>
+				<li>MAVProxy:</li>
+				<ul>
+				<li>Version: 1.8.48</li>
+				<li>At the field our TX2 IP was 192.168.1.149 and the laptop with GCS was 192.168.1.139.</li>
+				<li>We had one application connect to MAVProxy through port 14551. The GCS used port 14550.</li>
+				<li>From the TX2 terminal we ran:</li>
+				<li>mavproxy.py --master=/dev/ttyACM0 --out=udp:192.168.1.139:14550 --out=udp:127.0.0.1:14551</li>
+				<li>Installation Guide: <a href="https://ardupilot.org/mavproxy/docs/getting_started/download_and_installation.html">From ArduPilot</a></li>
+				<li>User Guide: <a href="https://ardupilot.org/mavproxy/index.html#home">User Guide</a></li>
+				</ul>
+				<li>PIP</li>
+				<ul>
+				<li>Pip was used to install python2.7 dependencies.</li>
+				<li>Version: 20.44</li>
+				<li>Pip3.7 was used to install python3.7 dependencies.</li>
+				<li>Version: 20.44</li>
+				</ul>
+				<li>Python:</li>
+				<ul>
+				<li>Version: 2.7.12</li>
+				<li>Required for the dronekit library.</li>
+				</ul>
+				<li>Python3.7:</li>
+				<ul>
+				<li>Version: 3.7.9</li>
+				<li>Required for the OpenCV library.</li>
+				</ul>
+				<li>Dronekit Python Library:</li>
+				<ul>
+				<li>Version: 2.9.1</li>
+				<li>API Reference: <a href="https://dronekit-python.readthedocs.io/en/latest/automodule.html">Dronekit API</a></li>
+				</ul>
+				<li>OpenCV Python Library:</li>
+				<ul>
+				<li>Version: 4.5.5.64</li>
+				<li>API Reference: <a href="https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html">OpenCV API</a></li>
+				<li>SimpleBlobDetector OpenCV </li>
+				<li>Class Reference: <a href="https://docs.opencv.org/3.4/d0/d7a/classcv_1_1SimpleBlobDetector.html">Class Reference</a></li>
+				<li>Useful Link: <a href="https://learnopencv.com/blob-detection-using-opencv-python-c/">Blob Tutorial</a></li>
+				</ul>
+				<li>SITL:</li>
+				<ul>
+				<li>Host Platform: Windows 10, WSL 1, Ubuntu-18.04</li>
+				<li>Version: Installed with current version on 02/08/2022.</li>
+				<li>Vehicle Type: ArduCopter</li>
+				<li>Frame: Quad</li>
+				<li>Autopilot: Cube Orange</li>
+				<li>Installation Guide: <a href="https://ardupilot.org/dev/docs/setting-up-sitl-on-linux.html">SITL On Linux</a></li>
+				<li>Note: The linked reference branches to other links for additional requirements that must be met. The guide is not directed towards WSL, but it worked.</li>
+				<li>Note: MAVProxy was installed alongside the SITL installation and was called automatically when starting SITL.</li>
+				</ul>
+				<li>VNC Viewer:</li>
+				<ul>
+				<li>We used VNC with success. Very laggy over Wi-Fi at the field. VNC sessions do not close out if connection is lost, in contrast to an ssh connection without special precautions.</li>
+				<li>Version: 6.22.315</li>
+				<li>Installation: <a href="https://www.realvnc.com/en/connect/download/viewer/">VNC Viewer Is Free</a></li>
+				</ul>
+				<li>Tarot Gimbal Configuration:</li>
+				<ul>
+				<li>Official Link: <a href="http://www.tarotrc.com/Product/Detail.aspx?Lang=en&Id=5892143c-b532-41d5-8447-a5d00b8a7ab3">Website</a></li>
+				<li>User Manual: <a href="pdf/gimbalmanual.pdf">User Manual</a></li>
+				<li>Useful Link: <a href="https://www.youtube.com/watch?v=-E_5JOHhlno">Setup Tarot Gimbal</a></li>
+				<ul>
+				<li>Software link is in description.</li>
+				</ul>
+				</ul>
+			</ul>
+        </div>
+	</div>
+  </body>
+</html>

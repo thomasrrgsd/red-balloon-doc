@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <header>
+    <title>Pop A Red Balloon!</title>
+    <section id="header">
+    <div class="container-fluid px-0">
+		<div class="row no-gutters">
+			<div class="col-sm-auto bg-white">
+				<a href="https://github.ncsu.edu/wtjarrat/pop-a-red-balloon.git" class="logo navbar-brand">
+					<img src="images/sad_red_balloon.jpeg" alt="tilogo" width="150" height="150">
+				</a>
+			</div>
+			<div class="col-sm bg-white d-flex justify-content-center">
+				<myFont>Team A12/3: Pop A Red Balloon<br>RED BALLOONS BEWARE</myFont>
+			</div>
+			<div class="col-sm-auto bg-white">
+				<a href="https://github.ncsu.edu/wtjarrat/pop-a-red-balloon.git" class="logo navbar-brand">
+					<img src="images/sad_red_balloon.jpeg" alt="tilogo" width="150" height="150">
+				</a>
+			</div>			
+		</div>
+	</div>
+        <nav class="navbar navbar-expand-lg navbar-light main-nav border border-dark">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item nav">
+                        <a class="px-2" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item nav">
+                        <a class="active px-2" href="problemDescription.html">Problem Description</a>
+                    </li>
+                    <li class="nav-item nav">
+                        <a class="px-2" href="practicalProblems.html">Challenges & Advice</a>
+                    </li>
+                    <li class="nav-item nav">
+                        <a class="px-2" href="hardware.html">Hardware</a>
+                    </li>
+                    <li class="nav-item nav">
+                        <a class="px-2" href="software.html">Software</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+  </header>
+  <body>
+    <div class="container">
+		<div class="row pt-3 pb-3 bg-white">
+		    <p>  </p>
+		</div>
+		<div class="row pb-2 bg-white justify-content-md-center">
+			<h1>Pop a Red Balloon</h1>
+		</div>
+		<div class="row bg-white pl-2 pb-2 pt-2">
+			The main goal of this project is to develop and implement the code required for the drone (UAV) or (UGV) to automatically find and pop a red balloon. Or some other relatively easy to identify, but which must first be visually found.
+			<br>
+			To this end, a video camera is connected to the drone and video processing is used to first detect the red balloon, and then to navigate the drone in the right direction to pop the balloon with the propellers of the drone (or a poker if a UGV is used).
+			<br>
+			The location of the target will change as the drone moves, but this can be compensated by receiving IMU information (pitch, roll), either from the autopilot, or from a separate IMU.
+			<br>
+			This project is closely related to visual tracker project and the video selfie project.
+        </div>
+		<div class="row bg-white pl-2 pb-2 pt-2">
+			<h3>Current Status</h3>
+		</div>
+		<div class="row bg-white pl-2 pb-2">
+			In Spring 2017, a team attempted this project. The results were underwhelming (although they did pop a balloon with the propellers), but the entire process of recognizing the balloon was very slow and unreliable, and they had a host of problems from stabilizing the video stream, to controlling the yaw of the UAV, to being unable to use a laser pointer to pop the balloon (as they hoped to). Also the library/processor they used only allowed for ... 1 frame per second processing or so, which had to slow down everything.
+        </div>
+		<div class="row bg-white pl-2 pb-2 pt-2">
+			<h3>Requirements</h3>
+        </div>
+		<div class="row bg-white pl-2 pb-2">
+			To successfully complete this project you need to have (or acquire):
+        </div>
+		<div class="row bg-white pl-2 pb-2">
+			<ul>
+			  <li>Ability to fly a drone if UAV.</li>
+			  <li>Programming skills to implement any algorithm you come up with.</li>
+			  <li>Basic video processing.</li>
+			</ul>
+        </div>
+		<div class="row bg-white pl-2 pb-2">
+			<h3>Deliverables</h3>
+        </div>
+		<div class="row bg-white pl-2 pb-4">
+			<ul>
+			  <li>Demo.</li>
+			  <li>Documentation.</li>
+			  <li>Commented code.</li>
+			</ul>
+        </div>
+	</div>
+  </body>
+</html>

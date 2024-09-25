@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <header>
+    <title>Pop A Red Balloon!</title>
+    <section id="header">
+    <div class="container-fluid px-0">
+		<div class="row no-gutters">
+			<div class="col-sm-auto bg-white">
+				<a href="https://www.williamjarratt.com" class="logo navbar-brand">
+					<img src="images/sad_red_balloon.jpeg" alt="tilogo" width="150" height="150">
+				</a>
+			</div>
+			<div class="col-sm bg-white d-flex justify-content-center">
+				<myFont>Team A12/3: Pop A Red Balloon<br>RED BALLOONS BEWARE</myFont>
+			</div>
+			<div class="col-sm-auto bg-white">
+				<a href="https://www.williamjarratt.com" class="logo navbar-brand">
+					<img src="images/sad_red_balloon.jpeg" alt="tilogo" width="150" height="150">
+				</a>
+			</div>			
+		</div>
+	</div>
+        <nav class="navbar navbar-expand-lg navbar-light main-nav border border-dark">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item nav">
+                        <a class="px-2" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item nav">
+                        <a class="px-2" href="problemDescription.html">Problem Description</a>
+                    </li>
+                    <li class="nav-item nav">
+                        <a class="active px-2" href="practicalProblems.html">Challenges & Advice</a>
+                    </li>
+                    <li class="nav-item nav">
+                        <a class="px-2" href="hardware.html">Hardware</a>
+                    </li>
+                    <li class="nav-item nav">
+                        <a class="px-2" href="software.html">Software</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+  </header>
+  <body>
+    <div class="container">
+		<div class="row pt-3 pb-3 bg-white">
+		    <p>  </p>
+		</div>
+		<div class="row bg-white pl-2 pb-4">
+			<ul>
+				<li><h4>Project Planning:</h4></li>
+				<ul>
+					<li>Advice: You want to get flying as soon as possible. You should have SITL running in the first couple weeks and you should be familiar with your MAVLink API, such as dronekit in our case.</li>
+					<li>Advice: Even if it is just basic patterns, you want to fly early so that you can get a feel for how field operations happen. You also will need to learn how you will link up to the drone
+					at the field and test your architecture. Additionally, since this project is video processing, you would want to gather flight videos containing the object you want to detect.</li>
+					<li>Advice: Everytime you go to the field, have a few objectives in mind. You do not want to be testing multiple things at once, flights are already pretty complicated. You should
+					add debugging code and code for turning on and off features for each visit so that you can test multiple things seperately. For example, we were able to toggle on/off the red object
+					detection so that we could have the drone run through the whole grid sweep and see what values it detected through the whole sweep (with and without balloon in frame).</li>
+				</ul>
+				<li><h4>Field & Lab Testing:</h4></li>
+				<ul>
+					<li>Problem: Debugging at the field is no fun at all. You want to design your code in a way that allows as much simulation and lab testing as possible. It may be worth the time
+					and effort it takes to add a little extra code to test a feature and know it works correctly before flying.</li>
+				</ul>
+				<li><h4>Payload Assembly:</h4></li>
+				<ul>
+					<li>Problem: The initial design of the mounting plate did not work perfectly, but we were able to alter it and make it work. This issue was because we designed the holes based on CAD models and did not put any thought into how connectors and wires would be routed.
+					It was much more clear how the mounting plate should have been designed once we had the parts in hand and placed over the plate.</li>
+					<li>Problem: We did not account for the height of the drone and found that the payload was too tall and so we had to move stuff around. This was due to the length added by the gimbal.</li>
+					<li>Problem: When parts are mounted to the plate, look for any terminals that might need to be accessed from below. For example, the TX2 power terminals are on the bottom.
+					We had to cut out a slot so that we could undo the power wires without removing the TX2 from the payload completely.</li>
+					<li>Advice: We did not create a mount for our antennas. They were just dangling in the air. This wasn't an issue, but they could easily have fallen off the TX2 midflight.
+					Those are required for Wi-Fi communication to the TX2.</li>
+					<li>Advice: Plan for multiple iterations of 3D printed parts. This was not an issue for us, but note that you will probably not want to be doing this the morning of a fly day.</li>
+				</ul>
+				<li><h4>Gimbal / Webcam Operation:</h4></li>
+				<ul>
+					<li>Problem: Could not get the gimbal to operate. Note, you need to have a weight on the gimbal for it to operate, otherwise it won't make it past the boot sequence.
+					It will continuously vibrate in short burst. We found this out in a Youtube commit.</li>
+					<li>Problem: The webcam cord is long, and the gimbal can get caught on the extra cable. Plan a good way to keep the webcam cord contained while also allowing slack for
+					the webcam to move around.</li>
+					<li>Problem: We designed the webcam to gimbal adapter in a way that the webcam is rotated 90 degrees. Two issues, one you lose horizontal range in video and the other is that
+					you have to rotate the video in your application, which waste processing resources.</li>
+					<li>Advice: We powered our payload in the lab and hooked the gimbal up to the computer. We used the software to control the gimbal and test its range of motion and checked out
+					how the video looked.</li>
+					<li>Advice: We did not have time to check into the gimbal to autopilot communication. Our project did not require us to control the gimbal, but doing so would have provided a lot
+					of additional options. Same for PWM control of the gimbal.</li>
+				</ul>
+				<li><h4>Python Scripting:</h4></li>
+				<ul>
+					<li>Problem: Using tabs on different machines caused compilation issues on the TX2. Use spacebar instead of tabs.</li>
+					<li>Problem: We lost many runs to traceback errors in our code. Use "python -m py_compile ./yourscript.py" to check for syntax issues. This method does not catch all errors
+					and so it is beneficial to program ways to fully run the code when not at the field.</li>
+					<li>Advice: Install a GitHub SSH key on the embedded system. It makes maintaining the code sooooo much easier.</li>
+					<li>Advice: Similarly, log into a Google Drive on the embedded system if possible. You can quickly upload logfiles and videos or images.</li>
+					<li>Advice: As noted earlier, it is worth the investment to program ways of testing code before heading to the field. Doing it at the field is no fun.</li>
+					<li>Advice: Modularize your code. Once you have something that works, encapsulate it and set it aside and do not change it anymore and move on to the next thing.</li>
+				</ul>
+				<li><h4>OpenCV / Video Processing:</h4></li>
+				<ul>
+					<li>Problem: We lost a few runs, due to having to tweak values. It may be beneficial to have a quick way to tweak the values.</li>
+					<li>Advice: We used a simple blob detector because we were only concerned with finding a red balloon. We saw that it is possible to get computer vision working
+					at a decent frame rate, but we were not able to achieve this. If we had more time we would attempt to implement computer vision, so that we can detect red balloons
+					and faces. This would all the software to attack red balloons and ignore people in red shirts.</li>
+					<li>Advice: Before you have video processing operational, get out to the field and get flight footage. Get as much flight footage containing the balloon as you can.
+					Prefferably you would want flight footage on days with varying conditions such as lighting. You can take these videos and run them through OpenCV in the lab and train/
+					tweak your video processing for the next fly day. This will be much more relaxing than doing it at the field.</li>
+				</ul>
+				<li><h4>dronekit API</h4></li>
+				<ul>
+					<li>Advice: Don't limit yourself to checking the dronekit website. Look through code of hobbyist and others online. We found many tricks inside code that wasn't official.</li>
+					<li>Advice: If we had to do this again, we might try for another package. Dronekit does exactly what is needed for this project, but has not been kept up for a while now.
+					It might be worth it to look into MAVSDK.</li>
+				</ul>
+				<li><h4>SITL Operation:</h4></li>
+				<ul>
+					<li>Advice: Start early. Like very early. Like, really, really early. Our SITL test matched actual flight operation very closely, with the exception of wind and sensor noise.</li>
+					<li>Advice: Learn how to add wind into SITL early on and test your scripts in this manner. You will almost never have a fly day where there is no wind.</li>
+				</ul>
+			</ul>
+        </div>
+	</div>
+  </body>
+</html>
